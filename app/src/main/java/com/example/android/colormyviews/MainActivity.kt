@@ -39,14 +39,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Use setBackgroundResource() to set an image instead of a color
     private fun makeColored (view: View) {
         when (view.id) {
-            R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
+            R.id.box_one_text -> {setView(view)}
+            //R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
             R.id.box_two_text -> view.setBackgroundColor(Color.GRAY)
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
+    }
+
+    private fun setView(view: View) {
+        view.setBackgroundResource(R.drawable.box_one_drawable)
+        val textView: TextView = view as TextView
+        textView.text = ""
     }
 }
